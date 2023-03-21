@@ -3,7 +3,7 @@ import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook } from "react-icons/ai";
 
 // Auth
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup, FacebookAuthProvider, updateProfile  } from "firebase/auth";
 import { auth } from "../../util/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
@@ -29,6 +29,19 @@ const Login = () => {
       console.log(error);
     }
   };
+
+  /* Sign in with Facebook
+  const fbProvider = newFacebookAuthProvider();
+
+  const FacebookProvider = async () => {
+    try {
+      const result = await signInWithPopup(auth, fbProvider);
+      console.log(result);
+      route.push("/dashboard");
+    } catch {
+      console.log(error);
+    }
+  } */
 
   // Redirect logged in users to Dashboard
   useEffect(() => {
